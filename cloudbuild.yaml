@@ -9,12 +9,6 @@ steps:
   # Push the container image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA']
-  - name: 'gcr.io/cloud-builders/npm'
-    args: ['install']
-  - name: 'gcr.io/cloud-builders/npm'
-    args: ['run', 'build']
-  - name: 'gcr.io/cloud-builders/gsutil'
-    args: ['-m', 'cp', '-r', 'dist/*', 'gs://vijay1234']
   artifacts:
     objects:
       location: 'gs://vijay1234/my-artifacts'
