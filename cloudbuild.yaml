@@ -14,10 +14,10 @@ steps:
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'build']
   - name: 'gcr.io/cloud-builders/gsutil'
-    args: ['-m', 'cp', '-r', 'dist/*', 'gs://my-bucket-name']
+    args: ['-m', 'cp', '-r', 'dist/*', 'gs://vijay1234']
   artifacts:
     objects:
-      location: 'gs://my-bucket-name/my-artifacts'
+      location: 'gs://vijay1234/my-artifacts'
   # Deploy container image to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
